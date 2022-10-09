@@ -4,21 +4,12 @@ import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.BytesWritable;
-import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.SequenceFile;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.InputSplit;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.FileSplit;
-import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 
 import java.io.File;
 import java.io.IOException;
-public class SmallFilesToSequenceFileConverter {
+public class SmallFilesToSeqFileUpload {
 
     /**
      *合并小文件，
@@ -53,4 +44,10 @@ public class SmallFilesToSequenceFileConverter {
         }
         writer.close();
     }
+
+    public static void main(String[] args) throws IOException {
+        write("G:\\Bayes\\Bayes\\bayes_data\\test","/input/test");
+        write("G:\\Bayes\\Bayes\\bayes_data\\train","/input/train");
+    }
+
 }
