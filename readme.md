@@ -31,7 +31,7 @@ print(vd)
 
 #### 打乱与分类
 
-```
+```java
 public static void shuffle(String inputDir, String outputDir) {
         File inputDirPath = new File(inputDir);
         if (!inputDirPath.isDirectory()) {
@@ -61,7 +61,6 @@ public static void shuffle(String inputDir, String outputDir) {
         Arrays.stream(typeFiles).unordered();
         int i = 0;
         int flag = typeFiles.length * 7 / 10;
-        System.out.println(flag + " flag");
         for (File f : typeFiles) {
             i++;
             if (i <= flag) {
@@ -82,7 +81,7 @@ public static void shuffle(String inputDir, String outputDir) {
 
 利用idea 将**小文件**压缩为**seqFile** 在上传到hdfs集群
 
-```
+```java
 public static void write(String inputDir,String outputFile) throws IOException {
         Configuration conf = new Configuration();
         conf.set("fs.defaultFS", "hdfs://sf01:8020");

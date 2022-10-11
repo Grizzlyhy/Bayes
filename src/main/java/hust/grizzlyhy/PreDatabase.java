@@ -1,11 +1,15 @@
 package hust.grizzlyhy;
 
+import org.apache.hadoop.conf.Configured;
+import org.apache.hadoop.util.Tool;
+
+
 import java.io.File;
 import java.util.Arrays;
 
 import static java.lang.System.exit;
 
-public class preDatabase {
+public class PreDatabase extends Configured implements Tool {
     /**
      *
      *
@@ -52,7 +56,13 @@ public class preDatabase {
 
     }
 
-    public static void main(String[] args) {
-        shuffle("G:\\Bayes\\Bayes\\data", "G:\\Bayes\\Bayes\\bayes_data");
+//    public static void main(String[] args) {
+//
+//    }
+
+    @Override
+    public int run(String[] arguments) {
+        shuffle(FilePathBean.getLocalDataBefore(), FilePathBean.getLocalBasePath());
+        return 0;
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[1790]仅执行一次字符串交换能否使两个字符串相等.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/doc/content/[1790]仅执行一次字符串交换能否使两个字符串相等.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1790" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[1790]仅执行一次字符串交换能否使两个字符串相等.java" />
+              <option name="titleSlug" value="check-if-one-string-swap-can-make-strings-equal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
