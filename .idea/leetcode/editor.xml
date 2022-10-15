@@ -3,6 +3,17 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[143]重排链表.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/doc/content/[143]重排链表.md" />
+              <option name="frontendQuestionId" value="leetcode.cn143" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[143]重排链表.java" />
+              <option name="titleSlug" value="reorder-list" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[1790]仅执行一次字符串交换能否使两个字符串相等.java">
           <value>
             <LeetcodeEditor>
@@ -11,6 +22,39 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[1790]仅执行一次字符串交换能否使两个字符串相等.java" />
               <option name="titleSlug" value="check-if-one-string-swap-can-make-strings-equal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[769]最多能完成排序的块.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/doc/content/[769]最多能完成排序的块.md" />
+              <option name="frontendQuestionId" value="leetcode.cn769" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[769]最多能完成排序的块.java" />
+              <option name="titleSlug" value="max-chunks-to-make-sorted" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[817]链表组件.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/doc/content/[817]链表组件.md" />
+              <option name="frontendQuestionId" value="leetcode.cn817" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[817]链表组件.java" />
+              <option name="titleSlug" value="linked-list-components" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[940]不同的子序列 II.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/doc/content/[940]不同的子序列 II.md" />
+              <option name="frontendQuestionId" value="leetcode.cn940" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../leetcode/tmp/leetcode/editor/cn/[940]不同的子序列 II.java" />
+              <option name="titleSlug" value="distinct-subsequences-ii" />
             </LeetcodeEditor>
           </value>
         </entry>

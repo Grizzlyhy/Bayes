@@ -1,6 +1,7 @@
 package hust.grizzlyhy;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
@@ -12,12 +13,42 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.util.Tool;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class ConditionalProJob {
+
+public class ConditionalProJob extends Configured implements Tool {
+
+    @Override
+    public int run(String[] args) throws Exception {
+        Configuration conf =getConf();
+        FileSystem fs = FileSystem.get(new URI(FilePathBean.getOutputCondiPath()), conf, "LYP");
+        fs.delete(new Path(FilePathBean.getOutputCondiPath()));
+        fs.close();
+        //  创建一个job
+        Job job = Job.getInstance(conf);
+        //  指定输入路径(可以是文件，也可以是目录)
+        FileInputFormat.setInputPaths(job, new Path(FilePathBean.getTrainDataPath()));
+        //  指定输出路径(只能指定一个不存在的目录)
+        FileOutputFormat.setOutputPath(job, new Path(FilePathBean.getOutputCondiPath()));
+
+        job.setInputFormatClass(SequenceFileInputFormat.class);
+        job.setMapperClass(ConditionalProMap.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(LongWritable.class);
+        job.setReducerClass(ConditionalProReduce.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(LongWritable.class);
+        job.setOutputFormatClass(TextOutputFormat.class);
+        //  提交job
+        //  注意：这一行必须设置，否则在集群中执行的是找不到WordCountJob这个类
+        job.setJarByClass(ConditionalProMap.class);
+        job.waitForCompletion(true);
+        return 0;
+    }
 
     public static class ConditionalProMap extends Mapper<Text, Text, Text, LongWritable> {
         //        private Text newKey = new Text();

@@ -11,10 +11,9 @@ public class Main {
         conf.set("dfs.replication", "2");
         System.setProperty("HADOOP_USER_NAME", "LYP");
 
-////      执行一次就可以了
+// 本地执行运行代码
 //        PreDatabase preDatabase = new PreDatabase();
 //        ToolRunner.run(conf,preDatabase,args);
-
 //        SmallFilesToSeqFileUpload smallFilesToSeqFileUpload = new SmallFilesToSeqFileUpload();
 //        ToolRunner.run(conf,smallFilesToSeqFileUpload,args);
 

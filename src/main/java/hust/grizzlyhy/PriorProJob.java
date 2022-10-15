@@ -48,7 +48,6 @@ public class PriorProJob extends Configured implements Tool {
     public int run(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
 
         Configuration conf =getConf();
-//        System.out.println(conf.get("fs.hdfs.impl"));
         FileSystem fileSystem = FileSystem.get(conf);
         fileSystem.delete(new Path(FilePathBean.getOutputPriorPath()), true);
         fileSystem.close();

@@ -12,9 +12,13 @@ public class FilePathBean {
     private static String TRAIN_DATA_PATH = BASE_PATH+"/train";
     private static String TEST_DATA_PATH = BASE_PATH+"/test";
 
-    private static String OUTPUT_BATH_PATH="/outpur/bayes";
-    private static String OUTPUT_PRIOR_PATH=OUTPUT_BATH_PATH+"TypeNum";
+    private static String OUTPUT_BATH_PATH="/output/bayes";
+    private static String OUTPUT_PRIOR_PATH=OUTPUT_BATH_PATH+"/TypeNum";
+    private static String OUTPUT_CONDI_PATH=OUTPUT_BATH_PATH+"/ConditionNum";
 
+    public static String getOutputCondiPath() {
+        return OUTPUT_CONDI_PATH;
+    }
 
     public static String getLocalTestPath() {
         return LOCAL_TEST_PATH;

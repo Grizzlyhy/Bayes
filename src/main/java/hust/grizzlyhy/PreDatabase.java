@@ -3,7 +3,6 @@ package hust.grizzlyhy;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.util.Tool;
 
-
 import java.io.File;
 import java.util.Arrays;
 
@@ -31,8 +30,9 @@ public class PreDatabase extends Configured implements Tool {
         if (!testPath.exists()) {
             testPath.mkdirs();
         }
-        for(int i=0;i<inputDirs.length;i++)
-            selletTestSet(inputDir,outputDir,inputDirs[i].getName());
+        for (int i = 0; i < inputDirs.length; i++) {
+            selletTestSet(inputDir, outputDir, inputDirs[i].getName());
+        }
     }
 
     public static void selletTestSet(String inputDir, String outputDir, String type) {
@@ -55,10 +55,6 @@ public class PreDatabase extends Configured implements Tool {
         }
 
     }
-
-//    public static void main(String[] args) {
-//
-//    }
 
     @Override
     public int run(String[] arguments) {

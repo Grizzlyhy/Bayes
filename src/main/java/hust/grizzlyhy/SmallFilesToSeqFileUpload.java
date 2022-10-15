@@ -20,11 +20,7 @@ public class SmallFilesToSeqFileUpload extends Configured implements Tool {
      * @throws IOException
      */
     public static void write(String inputDir,String outputFile,Configuration conf) throws IOException {
-//        Configuration conf = new Configuration();
-//        conf.set("fs.defaultFS", "hdfs://sf01:8020");
-//        conf.set("fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem");
-//        conf.set("dfs.replication", "2");
-//        System.setProperty("HADOOP_USER_NAME", "LYP");
+
         FileSystem fileSystem = FileSystem.get(conf);
         fileSystem.delete(new Path(outputFile), true);
         fileSystem.close();
@@ -47,16 +43,16 @@ public class SmallFilesToSeqFileUpload extends Configured implements Tool {
         }
         writer.close();
     }
+
+    /**
+     * @param args
+     * @return
+     * @throws IOException
+     */
     public int run(String[] args) throws IOException {
         Configuration conf = getConf();
-        write(FilePathBean.getLocalTrainPath(),"/input/bayes/test",conf);
-        write("G:\\Bayes\\Bayes\\bayes_data\\train","/input/bayes/train",conf);
+        write(FilePathBean.getLocalTrainPath(),FilePathBean.getTrainDataPath(),conf);
+        write(FilePathBean.getLocalTestPath(),FilePathBean.getTestDataPath(),conf);
         return 1;
     }
-    public static void main(String[] args) throws IOException {
-//        write("G:\\Bayes\\Bayes\\bayes_data\\test","/input/bayes/test");
-//        write("G:\\Bayes\\Bayes\\bayes_data\\train","/input/bayes/train");
-//            write("G:\\test","/input/test");
-    }
-
 }
