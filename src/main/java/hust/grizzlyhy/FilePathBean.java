@@ -15,6 +15,17 @@ public class FilePathBean {
     private static String OUTPUT_BATH_PATH="/output/bayes";
     private static String OUTPUT_PRIOR_PATH=OUTPUT_BATH_PATH+"/TypeNum";
     private static String OUTPUT_CONDI_PATH=OUTPUT_BATH_PATH+"/ConditionNum";
+    private static String OUTPUT_TESTPRE_PATH=OUTPUT_BATH_PATH+"/TestPre";
+
+    private static String OUTPUT_TEST_PATH=OUTPUT_BATH_PATH+"/Test";
+
+    public static String getOutputTestPath() {
+        return OUTPUT_TEST_PATH;
+    }
+
+    public static String getOutputTestprePath() {
+        return OUTPUT_TESTPRE_PATH;
+    }
 
     public static String getOutputCondiPath() {
         return OUTPUT_CONDI_PATH;

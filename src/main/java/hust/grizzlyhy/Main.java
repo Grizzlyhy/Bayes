@@ -17,8 +17,17 @@ public class Main {
 //        SmallFilesToSeqFileUpload smallFilesToSeqFileUpload = new SmallFilesToSeqFileUpload();
 //        ToolRunner.run(conf,smallFilesToSeqFileUpload,args);
 
+
         PriorProJob priorProJob = new PriorProJob();
         ToolRunner.run(conf, priorProJob, args);
+        ConditionalProJob conditionalProJob = new ConditionalProJob();
+        ToolRunner.run(conf, conditionalProJob, args);
+        TestPreJob testPreJob = new TestPreJob();
+        ToolRunner.run(conf, testPreJob, args);
+        TestPredJob testPredJob = new TestPredJob();
+        ToolRunner.run(conf, testPredJob, args);
+        Evaluation evaluation = new Evaluation();
+        ToolRunner.run(conf, evaluation, args);
 
 
 

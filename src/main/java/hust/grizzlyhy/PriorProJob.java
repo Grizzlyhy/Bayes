@@ -16,6 +16,8 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class PriorProJob extends Configured implements Tool {
 
@@ -25,7 +27,6 @@ public class PriorProJob extends Configured implements Tool {
 
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
             String k2 = key.toString();
-            System.out.println(k2);
             String type = k2.split("_")[0];
             context.write(new Text(type), one);
         }
@@ -45,12 +46,16 @@ public class PriorProJob extends Configured implements Tool {
     }
 
     @Override
-    public int run(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
+    public int run(String[] args) throws IOException, InterruptedException, ClassNotFoundException, URISyntaxException {
 
         Configuration conf =getConf();
         FileSystem fileSystem = FileSystem.get(conf);
-        fileSystem.delete(new Path(FilePathBean.getOutputPriorPath()), true);
-        fileSystem.close();
+        if (fileSystem == null) {
+
+        }
+        FileSystem fs = FileSystem.get(new URI(FilePathBean.getOutputPriorPath()), conf, "LYP");
+        fs.delete(new Path(FilePathBean.getOutputPriorPath()));
+        fs.close();
         Job job = Job.getInstance(conf);
         //  指定输入路径(可以是文件，也可以是目录)
         FileInputFormat.setInputPaths(job, new Path(FilePathBean.getTrainDataPath()));
